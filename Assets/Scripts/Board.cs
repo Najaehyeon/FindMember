@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Board : MonoBehaviour
 {
@@ -16,6 +16,10 @@ public class Board : MonoBehaviour
             arr[i] = i%12;
 
         }
+        
+        arr = arr.OrderBy(x => Random.Range(0f,11f)).ToArray();
+
+        
 
         for(int i = 0; i < 24 ; i++)
         {
