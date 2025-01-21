@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
+    public GameObject front;
+    public GameObject back;
+
+    public Animator anim;
     
     void Start()
     {
@@ -13,6 +17,14 @@ public class Card : MonoBehaviour
     
     void Update()
     {
+        
+    }
+    
+    public void OpenCard()
+    {
+        anim.SetBool("isOpen", true);
+        front.SetActive(true);
+        back.SetActive(false);
         
     }
 }
