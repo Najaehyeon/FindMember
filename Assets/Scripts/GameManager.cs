@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
+        Time.timeScale = 1.0f;
         Application.targetFrameRate = 60;
         if(Instancce == null)
         {
@@ -27,9 +28,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         time = float.Parse(timeTxt.text);
-        time -= Time.deltaTime;
-        timeTxt.text = time.ToString("N2");
+
+        if(time > 0)
+        {
+            time -= Time.deltaTime;
+            timeTxt.text = time.ToString("N2");
+        }
+        else
+        {
+            Time.timeScale = 0.0f;
+            timeTxt.text = "0.00";
+        }
+
+
         
     }
 }
