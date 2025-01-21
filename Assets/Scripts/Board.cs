@@ -19,12 +19,11 @@ public class Board : MonoBehaviour
 
         for(int i = 0; i < 24 ; i++)
         {
-            GameObject go = Instantiate(cardPref, this.transform);
 
             float x = i%4*1.2f -1.8f;
             float y = i/4*1.4f -4.0f;
 
-            go.transform.position = new Vector2(x,y);
+            GameObject go = Instantiate(cardPref, new Vector3(x, y, 0), Quaternion.identity);
 
             go.GetComponent<Card>().Setting(arr[i]);
             
