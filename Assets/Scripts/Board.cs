@@ -6,6 +6,7 @@ using System.Linq;
 public class Board : MonoBehaviour
 {
     public GameObject cardPref;
+    public GameObject parentObject;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class Board : MonoBehaviour
             float x = i%4*1.2f -1.8f;
             float y = i/4*1.4f -4.0f;
 
-            GameObject go = Instantiate(cardPref, new Vector3(x, y, 0), Quaternion.identity);
+            GameObject go = Instantiate(cardPref, new Vector3(x, y, 0), Quaternion.identity, parentObject.transform);
 
             go.GetComponent<Card>().Setting(arr[i]);
             
