@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
         {
             Instancce = this;
         }
+        else if(Instancce != null)
+        {
+            Destroy(this);
+        }
     }
     // Start is called before the first frame update
     void Start()
