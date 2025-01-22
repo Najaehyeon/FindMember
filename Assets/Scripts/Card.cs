@@ -37,7 +37,7 @@ public class Card : MonoBehaviour
     }
     public void DestroyCard()
     {
-        Invoke("DestroyCardInvoke", 1.0f);
+        Invoke("DestroyCardInvoke", GameManager.Instance.cardCloseDelayTime);
     }
     void DestroyCardInvoke()
     {
@@ -63,7 +63,7 @@ public class Card : MonoBehaviour
 
     public void CloseCard()
     {
-        Invoke("CloseCardInvoke", 1.0f);
+        Invoke("CloseCardInvoke", GameManager.Instance.cardCloseDelayTime);
     }
     void CloseCardInvoke()
     {
