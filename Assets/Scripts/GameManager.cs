@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         firstCard = null;
         secondCard = null;
     }
-
+      
     void Update()
     {
         remainTime = float.Parse(timeTxt.text);
