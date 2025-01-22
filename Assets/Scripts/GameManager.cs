@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
     public Card secondCard;
     public int cardCount;
 
-
-
     public void Awake()
     {
         Time.timeScale = 1.0f;
@@ -35,8 +33,6 @@ public class GameManager : MonoBehaviour
     {
         remainTime = timeLimit;
         timeTxt.text = timeLimit.ToString("N2");
-
-
     }
     public void isMatched()
     {
@@ -48,8 +44,6 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene("ClearScene");
                 Time.timeScale = 0.0f;
-
-                SaveCurrentTime();
             }
         }
         else
@@ -63,11 +57,13 @@ public class GameManager : MonoBehaviour
         {
             firstCard.DestroyCard();
             secondCard.DestroyCard();
+            AudioManager.instance.SoundPlayMatchSuccess(0.5f);  //괄호 속 숫자 만큼 소리 출력 시간 딜레이
         }
         else
         {
             firstCard.CloseCard();
             secondCard.CloseCard();
+            AudioManager.instance.SoundPlayMatchFailed(0.5f);  //괄호 속 숫자 만큼 소리 출력 시간 딜레이
         }
         firstCard = null;
         secondCard = null;
@@ -87,22 +83,6 @@ public class GameManager : MonoBehaviour
             endPanel.SetActive(true);
             Time.timeScale = 0.0f;
             timeTxt.text = "0.00";
-
-            SaveCurrentTime();
         }
     }
-    private void SaveCurrentTime()
-    {
-        float currentTime = float.Parse(timeTxt.text);
-        PlayerPrefs.SetFloat("CurrentTime", currentTime);
-
-        float bestTime = PlayerPrefs.GetFloat("BestTime", float.MaxValue);
-
-
-        if (currentTime > bestTime)
-        {
-            PlayerPrefs.SetFloat("BestTime", currentTime);
-        }
-    }
-
 }
