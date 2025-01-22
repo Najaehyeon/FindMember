@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     private float remainTime;
     public float cardFlipDelayTime;
+    public float cardCloseDelayTime;
+    public float MoveToClearSceneDelayTime;
 
     public GameObject cardObjects;
 
@@ -52,11 +54,9 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if (cardCount == 0)
             {
-                SceneManager.LoadScene("ClearScene");
-                Time.timeScale = 0.0f;
-
                 SaveCurrentCount();
                 selectCount = 0;
+                Invoke(nameof(ClearGameMoveScene), MoveToClearSceneDelayTime);
             }
         }
         else
@@ -169,5 +169,12 @@ public class GameManager : MonoBehaviour
         }
 
         return result;
+    }
+
+    private void ClearGameMoveScene()
+    {
+        SceneManager.LoadScene("ClearScene");
+        Time.timeScale = 0.0f;
+
     }
 }
