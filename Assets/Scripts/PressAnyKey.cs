@@ -15,7 +15,7 @@ public class PressAnyKey : MonoBehaviour
         text = GetComponent<Text>();
     }
 
-    
+
     void Update()
     {
         // Time.unscaledDeltaTime을 사용하여 독립 시간 계산
