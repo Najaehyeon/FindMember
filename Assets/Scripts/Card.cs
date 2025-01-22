@@ -44,22 +44,19 @@ public class Card : MonoBehaviour
     public void OpenCard()
     {
         anim.SetBool("isOpen", true);
-<<<<<<< HEAD
         flipSound.Play();
-=======
         front.SetActive(true);
         back.SetActive(false);
 
-        if (GameManager.Instancce.firstCard == null)
+        if (GameManager.Instance.firstCard == null)
         {
-            GameManager.Instancce.firstCard = this;
+            GameManager.Instance.firstCard = this;
         }
         else 
         { 
-            GameManager.Instancce.secondCard = this;
-            GameManager.Instancce.isMatched();
+            GameManager.Instance.secondCard = this;
+            GameManager.Instance.isMatched();
         }
->>>>>>> KangHyunAh_Dev
     }
 
     public void CloseCard()

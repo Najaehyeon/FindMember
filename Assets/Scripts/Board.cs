@@ -18,7 +18,7 @@ public class Board : MonoBehaviour
         }
         
         arr = arr.OrderBy(x => Random.Range(0f,11f)).ToArray();
-        GameManager.Instancce.cardCount = arr.Length;
+        GameManager.Instance.cardCount = arr.Length;
 
         
 
