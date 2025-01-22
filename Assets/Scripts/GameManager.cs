@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instancce;
+    public GameObject endPanel;
     public Text timeTxt;
     float time;
 
@@ -42,8 +43,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            endPanel.SetActive(true);
             Time.timeScale = 0.0f;
             timeTxt.text = "0.00";
+  
         }
 
 
