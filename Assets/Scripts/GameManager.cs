@@ -6,46 +6,45 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instancce;
+    public static GameManager Instance;
     public GameObject endPanel;
     public Text timeTxt;
-    float time;
+    public float timeLimit;
+
+    private float remainTime;
 
     public void Awake()
     {
         Time.timeScale = 1.0f;
         Application.targetFrameRate = 60;
-        if(Instancce == null)
+        if(Instance == null)
         {
-            Instancce = this;
+            Instance = this;
         }
-        else if(Instancce != null)
+        else if(Instance != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);             //scene이 이동하는 과정에 해당 오브젝트가 파괴되지 않도록 관리.
     }
 
+    private void Start()
+    {
+        remainTime = timeLimit;
+        timeTxt.text = timeLimit.ToString("N2");
+    }
 
     void Update()
     {
-        
-        time = float.Parse(timeTxt.text);
-
-        if(time > 0)
+        if (remainTime > 0)
         {
-            time -= Time.deltaTime;
-            timeTxt.text = time.ToString("N2");
+            remainTime -= Time.deltaTime;
+            timeTxt.text = remainTime.ToString("N2");
         }
         else
         {
             endPanel.SetActive(true);
             Time.timeScale = 0.0f;
             timeTxt.text = "0.00";
-  
         }
-
-
-        
     }
 }

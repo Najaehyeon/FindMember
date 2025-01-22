@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
         } 
         else if (instance != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         DontDestroyOnLoad(this.gameObject);     //scene이 이동하는 과정에 해당 오브젝트가 파괴되지 않도록 관리.
     }
