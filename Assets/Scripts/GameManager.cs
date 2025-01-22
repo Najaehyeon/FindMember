@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameObject endPanel;
     public Text timeTxt;
+    public Text bestScoreTxt;
+    public Text tryCountTxt;
     public float timeLimit;
 
     private float remainTime;
@@ -14,8 +16,8 @@ public class GameManager : MonoBehaviour
     public Card firstCard;
     public Card secondCard;
     public int cardCount;
-
-
+    public int selectCount;
+    int tryCount;
 
     public void Awake()
     {
@@ -35,9 +37,8 @@ public class GameManager : MonoBehaviour
     {
         remainTime = timeLimit;
         timeTxt.text = timeLimit.ToString("N2");
-
-
     }
+
     public void isMatched()
     {
         if (firstCard.index == secondCard.index)
@@ -49,7 +50,8 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("ClearScene");
                 Time.timeScale = 0.0f;
 
-                SaveCurrentTime();
+                SaveCurrentCount();
+                selectCount = 0;
             }
         }
         else
@@ -76,6 +78,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         remainTime = float.Parse(timeTxt.text);
+        tryCount = selectCount / 2;
+        tryCountTxt.text = tryCount.ToString();
 
         if (remainTime > 0)
         {
@@ -87,22 +91,30 @@ public class GameManager : MonoBehaviour
             endPanel.SetActive(true);
             Time.timeScale = 0.0f;
             timeTxt.text = "0.00";
-
-            SaveCurrentTime();
+            if (PlayerPrefs.GetInt("BestScore") == 0)
+            {
+                bestScoreTxt.text = "기록이 없습니다.";
+            }
+            else
+            {
+                bestScoreTxt.text = PlayerPrefs.GetInt("BestScore").ToString("N2");
+            }
         }
     }
-    private void SaveCurrentTime()
+    private void SaveCurrentCount()
     {
-        float currentTime = float.Parse(timeTxt.text);
-        PlayerPrefs.SetFloat("CurrentTime", currentTime);
-
-        float bestTime = PlayerPrefs.GetFloat("BestTime", float.MaxValue);
-
-
-        if (currentTime > bestTime)
+        if (PlayerPrefs.GetInt("BestScore") == 0)
         {
-            PlayerPrefs.SetFloat("BestTime", currentTime);
+            PlayerPrefs.SetInt("BestScore", tryCount);
+            bestScoreTxt.text = PlayerPrefs.GetInt("BestScore").ToString("N2");
         }
+        else
+        {
+            if (tryCount < PlayerPrefs.GetInt("BestScore"))
+            {
+                PlayerPrefs.SetInt("BestScore", tryCount);
+            }
+        }
+        PlayerPrefs.SetInt("CurrentScore", tryCount);
     }
-
 }

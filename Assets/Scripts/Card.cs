@@ -35,7 +35,7 @@ public class Card : MonoBehaviour
             back.SetActive(false);
         }
     }
-     public void DestroyCard() 
+    public void DestroyCard()
     {
         Invoke("DestroyCardInvoke", 1.0f);
     }
@@ -50,6 +50,7 @@ public class Card : MonoBehaviour
         flipSound.Play();
         front.SetActive(true);
         back.SetActive(false);
+        GameManager.Instance.selectCount++;
 
         if (GameManager.Instance.firstCard == null)
         {
