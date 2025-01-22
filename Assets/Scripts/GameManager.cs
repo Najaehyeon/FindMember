@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameObject endPanel;
     public Text timeTxt;
+    public Text bestRecordTxt;
     public float timeLimit;
 
     private float remainTime;
@@ -15,15 +16,17 @@ public class GameManager : MonoBehaviour
     public Card secondCard;
     public int cardCount;
 
+
+
     public void Awake()
     {
         Time.timeScale = 1.0f;
         Application.targetFrameRate = 60;
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
-        else if(Instance != null)
+        else if (Instance != null)
         {
             Destroy(gameObject);
         }
@@ -33,43 +36,47 @@ public class GameManager : MonoBehaviour
     {
         remainTime = timeLimit;
         timeTxt.text = timeLimit.ToString("N2");
+
+
     }
     public void isMatched()
     {
-        if (firstCard.index == secondCard.index) 
+        if (firstCard.index == secondCard.index)
         {
             checkMatched();
             cardCount -= 2;
-            if (cardCount == 0) 
+            if (cardCount == 0)
             {
                 SceneManager.LoadScene("ClearScene");
                 Time.timeScale = 0.0f;
+
+                SaveCurrentTime();
             }
         }
-        else 
+        else
         {
             checkMatched();
         }
     }
-    public void checkMatched() 
+    public void checkMatched()
+    {
+        if (firstCard.index == secondCard.index)
         {
-            if (firstCard.index == secondCard.index) 
-            {
-                firstCard.DestroyCard();
-                secondCard.DestroyCard();
-            }
-            else 
-            { 
-                firstCard.CloseCard();
-                secondCard.CloseCard();
-            }
-            firstCard = null;
-            secondCard = null;
+            firstCard.DestroyCard();
+            secondCard.DestroyCard();
         }
+        else
+        {
+            firstCard.CloseCard();
+            secondCard.CloseCard();
+        }
+        firstCard = null;
+        secondCard = null;
+    }
 
     void Update()
     {
-            remainTime = float.Parse(timeTxt.text);
+        remainTime = float.Parse(timeTxt.text);
 
         if (remainTime > 0)
         {
@@ -81,6 +88,33 @@ public class GameManager : MonoBehaviour
             endPanel.SetActive(true);
             Time.timeScale = 0.0f;
             timeTxt.text = "0.00";
+
+            SaveCurrentTime();
+        }
+    }
+    private void SaveCurrentTime()
+    {
+        float currentTime = float.Parse(timeTxt.text);
+        PlayerPrefs.SetFloat("CurrentTime", currentTime);
+
+        float bestTime = PlayerPrefs.GetFloat("BestTime", float.MaxValue);
+
+
+        if (currentTime > bestTime)
+        {
+            PlayerPrefs.SetFloat("BestTime", currentTime);
+        }
+    }
+    void DisplayBestTime()
+    {
+        float bestTime = PlayerPrefs.GetFloat("BestTime", float.MaxValue);
+        if (bestTime == float.MaxValue)
+        {
+            bestRecordTxt.text = "Best Time: --:--";
+        }
+        else
+        {
+            bestRecordTxt.text = "Best Time: " + bestTime.ToString("N2");
         }
     }
 }

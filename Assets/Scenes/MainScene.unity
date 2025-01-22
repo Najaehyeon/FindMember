@@ -1304,7 +1304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endPanel: {fileID: 413968459}
   timeTxt: {fileID: 940607669}
-  timeLimit: 200
+  bestRecordTxt: {fileID: 1774688986}
+  timeLimit: 5555
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   cardCount: 2

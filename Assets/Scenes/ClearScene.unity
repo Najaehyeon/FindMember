@@ -994,6 +994,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameoverPanel: {fileID: 245791756}
   pressAnyKeyText: {fileID: 1148011132}
+  currentTimeText: {fileID: 1817132724}
+  bestTimeText: {fileID: 346939752}
 --- !u!4 &1197350130
 Transform:
   m_ObjectHideFlags: 0
