@@ -10,15 +10,16 @@ public class Card : MonoBehaviour
     public GameObject front;
     public GameObject back;
 
+    private AudioSource flipSound;
+
     public Animator anim;
 
-    
-    void Start()
+    private void Start()
     {
-        
+        flipSound = GetComponent<AudioSource>();
+        flipSound.clip = AudioManager.instance.cardFlipClip;
     }
 
-    
     void Update()
     {
         if(transform.eulerAngles.y >= -90f && transform.eulerAngles.y <= 90f)   //카드가 뒷면
@@ -36,6 +37,7 @@ public class Card : MonoBehaviour
     public void OpenCard()
     {
         anim.SetBool("isOpen", true);
+        flipSound.Play();
     }
 
     public void CloseCard()

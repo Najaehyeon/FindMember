@@ -23,14 +23,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        DontDestroyOnLoad(this.gameObject);             //scene이 이동하는 과정에 해당 오브젝트가 파괴되지 않도록 관리.
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         

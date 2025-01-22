@@ -6,22 +6,31 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    public AudioClip matchFailed;
-    public AudioClip matchSuccess;
-    public AudioClip cardFlip;
-    public AudioClip clickButton;
-    public AudioClip bgm;
+    public AudioClip matchFailedClip;
+    public AudioClip matchSuccessClip;
+    public AudioClip cardFlipClip;
+    public AudioClip clickButtonClip;
+    public AudioClip bgmClip;
+
+    private AudioSource bgmSource;
    
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-        } else if (instance != null)
+        } 
+        else if (instance != null)
         {
             Destroy(this);
         }
+        DontDestroyOnLoad(this.gameObject);     //scene이 이동하는 과정에 해당 오브젝트가 파괴되지 않도록 관리.
     }
 
-
+    private void Start()
+    {
+        bgmSource = GetComponent<AudioSource>();
+        bgmSource.clip = bgmClip;
+        bgmSource.Play();           //해당 오브젝트가 활성화 되자마자 BGM 재생 시작.
+    }
 }
