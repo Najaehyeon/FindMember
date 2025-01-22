@@ -63,11 +63,13 @@ public class GameManager : MonoBehaviour
         {
             firstCard.DestroyCard();
             secondCard.DestroyCard();
+            AudioManager.instance.SoundPlayMatchSuccess(0.5f);
         }
         else
         {
             firstCard.CloseCard();
             secondCard.CloseCard();
+            AudioManager.instance.SoundPlayMatchFailed(0.5f);
         }
         firstCard = null;
         secondCard = null;
