@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +14,10 @@ public class GameManager : MonoBehaviour
     public float timeLimit;
 
     private float remainTime;
+
+    public Card firstCard;
+    public Card secondCard;
+    public int cardCount;
 
     public void Awake()
     {
@@ -32,9 +38,43 @@ public class GameManager : MonoBehaviour
         remainTime = timeLimit;
         timeTxt.text = timeLimit.ToString("N2");
     }
+    public void isMatched()
+    {
+        if (firstCard.index == secondCard.index) 
+        {
+            checkMatched();
+            cardCount -= 2;
+            if (cardCount == 0) 
+            {
+                SceneManager.LoadScene("ClearScene");
+                Time.timeScale = 0.0f;
+            }
+        }
+        else 
+        {
+            checkMatched();
+        }
+    }
+    public void checkMatched() 
+        {
+            if (firstCard.index == secondCard.index) 
+            {
+                firstCard.DestroyCard();
+                secondCard.DestroyCard();
+            }
+            else 
+            { 
+                firstCard.CloseCard();
+                secondCard.CloseCard();
+            }
+            firstCard = null;
+            secondCard = null;
+        }
 
     void Update()
     {
+            remainTime = float.Parse(timeTxt.text);
+
         if (remainTime > 0)
         {
             remainTime -= Time.deltaTime;
@@ -47,4 +87,7 @@ public class GameManager : MonoBehaviour
             timeTxt.text = "0.00";
         }
     }
+
+    
+        
 }

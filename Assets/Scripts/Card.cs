@@ -33,16 +33,44 @@ public class Card : MonoBehaviour
             back.SetActive(false);
         }
     }
-    
+     public void DestroyCard() 
+    {
+        Invoke("DestroyCardInvoke", 1.0f);
+    }
+    void DestroyCardInvoke() 
+    {
+        Destroy(gameObject);
+    }
     public void OpenCard()
     {
         anim.SetBool("isOpen", true);
+<<<<<<< HEAD
         flipSound.Play();
+=======
+        front.SetActive(true);
+        back.SetActive(false);
+
+        if (GameManager.Instancce.firstCard == null)
+        {
+            GameManager.Instancce.firstCard = this;
+        }
+        else 
+        { 
+            GameManager.Instancce.secondCard = this;
+            GameManager.Instancce.isMatched();
+        }
+>>>>>>> KangHyunAh_Dev
     }
 
     public void CloseCard()
     {
+        Invoke("CloseCardInvoke", 1.0f);
+    }
+    void CloseCardInvoke() 
+    {
         anim.SetBool("isOpen", false);
+        front.SetActive(false);
+        back.SetActive(true);
     }
 
     public void Setting(int number)
@@ -51,4 +79,7 @@ public class Card : MonoBehaviour
         frontimage.sprite = Resources.Load<Sprite>($"card{index}");
 
     }
+
+   
+
 }
