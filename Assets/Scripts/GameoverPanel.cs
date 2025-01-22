@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameoverPanel : MonoBehaviour
 {
     public GameObject gameoverPanel;
+    public GameObject pressAnyKeyText;
 
     // Start is called before the first frame update
 
@@ -22,6 +23,7 @@ public class GameoverPanel : MonoBehaviour
         if (Input.anyKeyDown && gameoverPanel != null && !gameoverPanel.activeSelf)
         {
             gameoverPanel.SetActive(true);
+            pressAnyKeyText.SetActive(false);
         }
     }
 }

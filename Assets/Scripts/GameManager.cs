@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -87,7 +83,4 @@ public class GameManager : MonoBehaviour
             timeTxt.text = "0.00";
         }
     }
-
-    
-        
 }
