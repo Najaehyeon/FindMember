@@ -41,7 +41,6 @@ public class Card : MonoBehaviour
     }
     void DestroyCardInvoke()
     {
-        GameManager.Instance.ActiveButtonObjects(true);
         Destroy(gameObject);
     }
     public void OpenCard()
@@ -68,7 +67,6 @@ public class Card : MonoBehaviour
     }
     void CloseCardInvoke()
     {
-        GameManager.Instance.ActiveButtonObjects(true);
         anim.SetBool("isOpen", false);
         backBtn.SetActive(true);
     }

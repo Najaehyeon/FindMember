@@ -1715,6 +1715,7 @@ MonoBehaviour:
   bestScoreTxt: {fileID: 1774688986}
   tryCountTxt: {fileID: 169668346}
   timeLimit: 100
+  cardFlipDelayTime: 0.5
   cardObjects: {fileID: 914285788}
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}

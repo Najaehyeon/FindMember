@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public float timeLimit;
 
     private float remainTime;
+    public float cardFlipDelayTime;
 
     public GameObject cardObjects;
 
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
     }
     public void checkMatched()
     {
-        ActiveButtonObjects(false);
+        SetActiveFalseButtonObjects();              //모든 버튼 오브젝트 비활성화
         if (firstCard.index == secondCard.index)
         {
             firstCard.DestroyCard();
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
         }
         firstCard = null;
         secondCard = null;
+        Invoke(nameof(SetActiveTrueButtonObjects), cardFlipDelayTime);
     }
 
     void Update()
@@ -126,15 +128,28 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void ActiveButtonObjects(bool active)            //Button ?�그�?가�??�브?�트�??�성??�?비활?�화??
+    public void SetActiveTrueButtonObjects()
     {
         List<GameObject> buttonObject = GetButtonGameObjects(cardObjects, "Button");
 
         if (buttonObject.Count > 0)
         {
             for (int i = 0; i < buttonObject.Count; i++)
-            { 
-                buttonObject[i].SetActive(active);
+            {
+                buttonObject[i].SetActive(true);
+            }
+        }
+    }
+
+    public void SetActiveFalseButtonObjects()
+    {
+        List<GameObject> buttonObject = GetButtonGameObjects(cardObjects, "Button");
+
+        if (buttonObject.Count > 0)
+        {
+            for (int i = 0; i < buttonObject.Count; i++)
+            {
+                buttonObject[i].SetActive(false);
             }
         }
     }
