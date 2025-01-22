@@ -19,11 +19,11 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         Application.targetFrameRate = 60;
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
-        else if(Instance != null)
+        else if (Instance != null)
         {
             Destroy(gameObject);
         }
@@ -36,40 +36,42 @@ public class GameManager : MonoBehaviour
     }
     public void isMatched()
     {
-        if (firstCard.index == secondCard.index) 
+        if (firstCard.index == secondCard.index)
         {
             checkMatched();
             cardCount -= 2;
-            if (cardCount == 0) 
+            if (cardCount == 0)
             {
                 SceneManager.LoadScene("ClearScene");
                 Time.timeScale = 0.0f;
             }
         }
-        else 
+        else
         {
             checkMatched();
         }
     }
-    public void checkMatched() 
+    public void checkMatched()
+    {
+        if (firstCard.index == secondCard.index)
         {
-            if (firstCard.index == secondCard.index) 
-            {
-                firstCard.DestroyCard();
-                secondCard.DestroyCard();
-            }
-            else 
-            { 
-                firstCard.CloseCard();
-                secondCard.CloseCard();
-            }
-            firstCard = null;
-            secondCard = null;
+            firstCard.DestroyCard();
+            secondCard.DestroyCard();
+            AudioManager.instance.SoundPlayMatchSuccess(0.5f);  //괄호 속 숫자 만큼 소리 출력 시간 딜레이
         }
+        else
+        {
+            firstCard.CloseCard();
+            secondCard.CloseCard();
+            AudioManager.instance.SoundPlayMatchFailed(0.5f);  //괄호 속 숫자 만큼 소리 출력 시간 딜레이
+        }
+        firstCard = null;
+        secondCard = null;
+    }
 
     void Update()
     {
-            remainTime = float.Parse(timeTxt.text);
+        remainTime = float.Parse(timeTxt.text);
 
         if (remainTime > 0)
         {
