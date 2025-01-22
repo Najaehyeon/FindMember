@@ -10,6 +10,8 @@ public class Card : MonoBehaviour
     public GameObject front;
     public GameObject back;
 
+    public GameObject backBtn;
+
     private AudioSource flipSound;
 
     public Animator anim;
@@ -44,6 +46,7 @@ public class Card : MonoBehaviour
     public void OpenCard()
     {
         anim.SetBool("isOpen", true);
+        backBtn.SetActive(false);
         flipSound.Play();
         front.SetActive(true);
         back.SetActive(false);
@@ -66,6 +69,7 @@ public class Card : MonoBehaviour
     void CloseCardInvoke() 
     {
         anim.SetBool("isOpen", false);
+        backBtn.SetActive(true);
         front.SetActive(false);
         back.SetActive(true);
     }
