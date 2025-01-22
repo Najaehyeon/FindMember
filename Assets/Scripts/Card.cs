@@ -22,12 +22,12 @@ public class Card : MonoBehaviour
 
     void Update()
     {
-        if(transform.eulerAngles.y >= -90f && transform.eulerAngles.y <= 90f)   //카드가 뒷면
+        if(transform.eulerAngles.y >= -90f && transform.eulerAngles.y <= 90f)   //카드가 뒷면을 보이고 있을 때
         {
-            front.SetActive(false);
+            front.SetActive(false);         
             back.SetActive(true);
         }
-        else
+        else                                                                    //카드가 앞면을 보이고 있을 때
         {
             front.SetActive(true);
             back.SetActive(false);

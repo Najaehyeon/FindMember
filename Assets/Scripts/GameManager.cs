@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if (cardCount == 0) 
             {
-                Invoke(nameof(InvokeLoadClearScene), 0.5f);
+                Invoke(nameof(InvokeLoadClearScene), 1f);
             }
         }
         else 
