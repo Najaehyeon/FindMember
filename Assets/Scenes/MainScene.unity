@@ -1132,6 +1132,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeTxt: {fileID: 940607669}
+<<<<<<< Updated upstream
+=======
+  timeLimit: 100
+  firstCard: {fileID: 0}
+  secondCard: {fileID: 0}
+  cardCount: 0
+>>>>>>> Stashed changes
 --- !u!4 &2079824475
 Transform:
   m_ObjectHideFlags: 0
