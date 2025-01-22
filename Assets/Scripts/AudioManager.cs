@@ -15,10 +15,12 @@ public class AudioManager : MonoBehaviour
     public GameObject successSoundObj;      //매치 성공 오디오소스가 담긴 오브젝트
     public GameObject failedSoundObj;       //매치 실패 오디오소스가 담긴 오브젝트
     public GameObject bgm_SoundObj;         //배경 음악 오디오소스가 담긴 오브젝트
+    public GameObject clickSoundObj;        //클릭 효과음 오디오소스가 담긴 오브젝트
 
     private AudioSource bgmSource;
     private AudioSource failedSource;
     private AudioSource successSource;
+    private AudioSource clickSource;
    
     private void Awake()
     {
@@ -45,6 +47,7 @@ public class AudioManager : MonoBehaviour
         bgmSource = bgm_SoundObj.GetComponent<AudioSource>();
         failedSource = failedSoundObj.GetComponent<AudioSource>();
         successSource = successSoundObj.GetComponent<AudioSource>();
+        clickSource = clickSoundObj.GetComponent<AudioSource>();
     }
 
     private void InputClipData()
@@ -52,22 +55,28 @@ public class AudioManager : MonoBehaviour
         bgmSource.clip = bgmClip;
         failedSource.clip = matchFailedClip;
         successSource.clip = matchSuccessClip;
+        clickSource.clip = clickButtonClip;
     }
 
 
-    public void SoundPlayBGM(float delayTIme)  //BGM 음악 실행
+    public void SoundPlayBGM(float delayTIme)           //BGM 음악 실행
     {
         Invoke(nameof(InvokePlayBGM), delayTIme);
     }
 
-    public void SoundPlayMatchFailed(float delayTIme)  //매치 실패 효과음 실행
+    public void SoundPlayMatchFailed(float delayTIme)   //매치 실패 효과음 실행
     {
         Invoke(nameof(InvokePlayMatchFailed), delayTIme);
     }
 
-    public void SoundPlayMatchSuccess(float delayTIme) //매치 성공 효과음 실행
+    public void SoundPlayMatchSuccess(float delayTIme)  //매치 성공 효과음 실행
     {
         Invoke(nameof(InvokePlayMatchSuccess), delayTIme);
+    }
+
+    public void SoundPlayClick(float delayTIme)         //클릭 효과음 실행
+    {
+        Invoke(nameof(InvokePlayClick), delayTIme);
     }
 
     private void InvokePlayBGM()
@@ -83,5 +92,10 @@ public class AudioManager : MonoBehaviour
     private void InvokePlayMatchSuccess()
     {
         successSource.Play();
+    }
+
+    private void InvokePlayClick()
+    {
+        clickSource.Play();
     }
 }

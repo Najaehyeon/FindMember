@@ -39,8 +39,9 @@ public class Card : MonoBehaviour
     {
         Invoke("DestroyCardInvoke", 1.0f);
     }
-    void DestroyCardInvoke() 
+    void DestroyCardInvoke()
     {
+        GameManager.Instance.ActiveButtonObjects(true);
         Destroy(gameObject);
     }
     public void OpenCard()
@@ -48,8 +49,6 @@ public class Card : MonoBehaviour
         anim.SetBool("isOpen", true);
         backBtn.SetActive(false);
         flipSound.Play();
-        front.SetActive(true);
-        back.SetActive(false);
         GameManager.Instance.selectCount++;
 
         if (GameManager.Instance.firstCard == null)
@@ -67,12 +66,11 @@ public class Card : MonoBehaviour
     {
         Invoke("CloseCardInvoke", 1.0f);
     }
-    void CloseCardInvoke() 
+    void CloseCardInvoke()
     {
+        GameManager.Instance.ActiveButtonObjects(true);
         anim.SetBool("isOpen", false);
         backBtn.SetActive(true);
-        front.SetActive(false);
-        back.SetActive(true);
     }
 
     public void Setting(int number)
