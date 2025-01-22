@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +12,8 @@ public class GameManager : MonoBehaviour
     public float timeLimit;
 
     private float remainTime;
+
+    public GameObject cardObjects;
 
     public Card firstCard;
     public Card secondCard;
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour
     }
     public void checkMatched()
     {
+        ActiveButtonObjects(false);
         if (firstCard.index == secondCard.index)
         {
             firstCard.DestroyCard();
@@ -63,7 +68,7 @@ public class GameManager : MonoBehaviour
         {
             firstCard.CloseCard();
             secondCard.CloseCard();
-            AudioManager.instance.SoundPlayMatchFailed(0.5f);  //괄호 속 숫자 만큼 소리 출력 시간 딜레이
+            AudioManager.instance.SoundPlayMatchFailed(0.5f);
         }
         firstCard = null;
         secondCard = null;
@@ -84,5 +89,50 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0.0f;
             timeTxt.text = "0.00";
         }
+    }
+
+    private void SaveCurrentTime()
+    {
+        float currentTime = float.Parse(timeTxt.text);
+        PlayerPrefs.SetFloat("CurrentTime", currentTime);
+
+        float bestTime = PlayerPrefs.GetFloat("BestTime", float.MaxValue);
+
+
+        if (currentTime > bestTime)
+        {
+            PlayerPrefs.SetFloat("BestTime", currentTime);
+        }
+    }
+
+
+    public void ActiveButtonObjects(bool active)            //Button 태그를 가진 오브젝트를 활성화 및 비활성화화
+    {
+        List<GameObject> buttonObject = GetButtonGameObjects(cardObjects, "Button");
+
+        if (buttonObject.Count > 0)
+        {
+            for (int i = 0; i < buttonObject.Count; i++)
+            { 
+                buttonObject[i].SetActive(active);
+            }
+        }
+    }
+
+    private List<GameObject> GetButtonGameObjects(GameObject parentObject, string tag)
+    {
+        List<GameObject> result = new List<GameObject>();
+
+        foreach (Transform child in parentObject.transform)
+        {
+            if(child.gameObject.CompareTag(tag))
+            {
+                result.Add(child.gameObject);
+            }
+
+            result.AddRange(GetButtonGameObjects(child.gameObject, tag));
+        }
+
+        return result;
     }
 }
