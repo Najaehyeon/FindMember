@@ -46,8 +46,7 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if (cardCount == 0) 
             {
-                SceneManager.LoadScene("ClearScene");
-                Time.timeScale = 0.0f;
+                Invoke(nameof(InvokeLoadClearScene), 0.5f);
             }
         }
         else 
@@ -88,6 +87,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    private void InvokeLoadClearScene()
+    {
+        Time.timeScale = 0.0f;
+        SceneManager.LoadScene("ClearScene");
+    }
         
 }
