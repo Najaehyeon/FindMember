@@ -10,15 +10,16 @@ public class Card : MonoBehaviour
     public GameObject front;
     public GameObject back;
 
+    private AudioSource flipSound;
+
     public Animator anim;
 
-    
-    void Start()
+    private void Start()
     {
-        
+        flipSound = GetComponent<AudioSource>();
+        flipSound.clip = AudioManager.instance.cardFlipClip;
     }
 
-    
     void Update()
     {
         if(transform.eulerAngles.y >= -90f && transform.eulerAngles.y <= 90f)   //카드가 뒷면
@@ -32,15 +33,41 @@ public class Card : MonoBehaviour
             back.SetActive(false);
         }
     }
-    
+     public void DestroyCard() 
+    {
+        Invoke("DestroyCardInvoke", 1.0f);
+    }
+    void DestroyCardInvoke() 
+    {
+        Destroy(gameObject);
+    }
     public void OpenCard()
     {
         anim.SetBool("isOpen", true);
+        flipSound.Play();
+        front.SetActive(true);
+        back.SetActive(false);
+
+        if (GameManager.Instance.firstCard == null)
+        {
+            GameManager.Instance.firstCard = this;
+        }
+        else 
+        { 
+            GameManager.Instance.secondCard = this;
+            GameManager.Instance.isMatched();
+        }
     }
 
     public void CloseCard()
     {
+        Invoke("CloseCardInvoke", 1.0f);
+    }
+    void CloseCardInvoke() 
+    {
         anim.SetBool("isOpen", false);
+        front.SetActive(false);
+        back.SetActive(true);
     }
 
     public void Setting(int number)
@@ -49,4 +76,7 @@ public class Card : MonoBehaviour
         frontimage.sprite = Resources.Load<Sprite>($"card{index}");
 
     }
+
+   
+
 }
