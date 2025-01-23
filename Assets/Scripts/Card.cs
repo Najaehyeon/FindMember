@@ -37,6 +37,14 @@ public class Card : MonoBehaviour
             backimage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
             break;
 
+            case 4:
+            backimage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
+            break;
+
+            case 5:
+            backimage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
+            break;
+
         }
 
         flipSound = GetComponent<AudioSource>();

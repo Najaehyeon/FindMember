@@ -33,12 +33,12 @@ public class OnCardColorBtn : MonoBehaviour
 
     public void OnClickFour()
     {
-        ColorManager.instance.colorType = 3;
+        ColorManager.instance.colorType = 4;
     }
 
     public void OnClickFive()
     {
-        ColorManager.instance.colorType = 3;
+        ColorManager.instance.colorType = 5;
     }
 
 }
