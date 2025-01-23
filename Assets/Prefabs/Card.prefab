@@ -369,10 +369,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   frontimage: {fileID: 4462767246209553673}
+  backImage: {fileID: 3530111300160625567}
   front: {fileID: 2456953007277409880}
   back: {fileID: 5843373402612432042}
   backBtn: {fileID: 1139988738535411874}
   anim: {fileID: 2581009824899311312}
+  colorTypeCard: 1
 --- !u!95 &2581009824899311312
 Animator:
   serializedVersion: 5
