@@ -21,6 +21,8 @@ public class ClearSceneTextManager : MonoBehaviour
     public Text currentRecordTxt;
     public Text retryTxt;
 
+    public Text pressAnyKeyTxt;
+
     public Font fontENG;
     public Font fontKOR;
     public Font fontJPN;
@@ -64,6 +66,7 @@ public class ClearSceneTextManager : MonoBehaviour
         bestRecordTxt.font = font;
         currentRecordTxt.font = font;
         retryTxt.font = font;
+        pressAnyKeyTxt.font = font;
     }
 
     public void SettingLanguage(string language)
@@ -90,6 +93,8 @@ public class ClearSceneTextManager : MonoBehaviour
             bestRecordTxt.text = "High Score";
             currentRecordTxt.text = "Current Score";
             retryTxt.text = "Play Again.";
+
+            pressAnyKeyTxt.text = "Please click the screen";
         }
         else if (nowLanguage == "KOR")
         {
@@ -105,6 +110,8 @@ public class ClearSceneTextManager : MonoBehaviour
             bestRecordTxt.text = "최고 기록";
             currentRecordTxt.text = "현재 기록";
             retryTxt.text = "다시하기";
+
+            pressAnyKeyTxt.text = "화면을 클릭해 주세요";
         }
         else if (nowLanguage == "JPN")
         {
@@ -120,6 +127,8 @@ public class ClearSceneTextManager : MonoBehaviour
             bestRecordTxt.text = "最高記録";
             currentRecordTxt.text = "現在記録";
             retryTxt.text = "もう一度プレイ";
+
+            pressAnyKeyTxt.text = "画面をクリックしてください";
         }
         else
         {
