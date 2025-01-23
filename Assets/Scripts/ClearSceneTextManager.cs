@@ -16,9 +16,16 @@ public class ClearSceneTextManager : MonoBehaviour
     public Text LDH_Text;
     public Text KHA_Text;
 
+    public Text gameOverTxt;
+    public Text bestRecordTxt;
+    public Text currentRecordTxt;
+    public Text retryTxt;
+
     public Font fontENG;
     public Font fontKOR;
     public Font fontJPN;
+
+    
 
     private string nowLanguage;
 
@@ -53,6 +60,10 @@ public class ClearSceneTextManager : MonoBehaviour
         CBC_Text.font = font;
         LDH_Text.font = font;
         KHA_Text.font = font;
+        gameOverTxt.font = font;
+        bestRecordTxt.font = font;
+        currentRecordTxt.font = font;
+        retryTxt.font = font;
     }
 
     public void SettingLanguage(string language)
@@ -74,6 +85,11 @@ public class ClearSceneTextManager : MonoBehaviour
             CBC_Text.text = "want to create a game that brings happiness to the players";
             LDH_Text.text = "I want to create a game that we can enjoy now, remebering the memories";
             KHA_Text.text = "I want to create a game that we forget the harsh reality";
+
+            gameOverTxt.text = "Game Over";
+            bestRecordTxt.text = "High Score";
+            currentRecordTxt.text = "Current Score";
+            retryTxt.text = "Play Again.";
         }
         else if (nowLanguage == "KOR")
         {
@@ -84,6 +100,11 @@ public class ClearSceneTextManager : MonoBehaviour
             CBC_Text.text = "유저들의 행복감을 채워주는 게임을 만들자";
             LDH_Text.text = "추억 속의 낭만을 챙기며, 지금을 즐길 게임을 만들자";
             KHA_Text.text = "힘든 현실을 잠시나마 잊을 수 있는 게임을 만들자";
+
+            gameOverTxt.text = "게임오버";
+            bestRecordTxt.text = "최고 기록";
+            currentRecordTxt.text = "현재 기록";
+            retryTxt.text = "다시하기";
         }
         else if (nowLanguage == "JPN")
         {
@@ -94,6 +115,11 @@ public class ClearSceneTextManager : MonoBehaviour
             CBC_Text.text = "ユーザーを幸せにするゲームを作ろう";
             LDH_Text.text = "思い出を守りながら今を楽しめるゲームを作ろう";
             KHA_Text.text = "辛い堅実を忘れられるゲームを作ろう";
+
+            gameOverTxt.text = "ゲームオーバー";
+            bestRecordTxt.text = "最高記録";
+            currentRecordTxt.text = "現在記録";
+            retryTxt.text = "もう一度プレイ";
         }
         else
         {

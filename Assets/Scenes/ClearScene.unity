@@ -158,6 +158,10 @@ MonoBehaviour:
   CBC_Text: {fileID: 1112703164}
   LDH_Text: {fileID: 1054534270}
   KHA_Text: {fileID: 1355506142}
+  gameOverTxt: {fileID: 1717170587}
+  bestRecordTxt: {fileID: 1937173485}
+  currentRecordTxt: {fileID: 1185269338}
+  retryTxt: {fileID: 1599687598}
   fontENG: {fileID: 12800000, guid: d7ddd10ba41741846bcaaba122b7361d, type: 3}
   fontKOR: {fileID: 12800000, guid: 57ae1cb9cdd659b4086c9ab9c8af6bb9, type: 3}
   fontJPN: {fileID: 12800000, guid: f6524c4bbb432d944b3b9c57a269cb21, type: 3}
@@ -1513,7 +1517,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uACC4\uC18D\uD558\uC2DC\uB824\uBA74 \uD654\uBA74\uC744 \uD130\uCE58\uD574\uC8FC\uC138\uC694"
+  m_Text: Please click anywhere
 --- !u!222 &1148011136
 CanvasRenderer:
   m_ObjectHideFlags: 0
