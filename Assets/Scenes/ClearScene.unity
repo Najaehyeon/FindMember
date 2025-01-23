@@ -2134,7 +2134,7 @@ MonoBehaviour:
   cardFlipClip: {fileID: 8300000, guid: 7482f0643168cf743ba5741d23f8dbd3, type: 3}
   clickButtonClip: {fileID: 8300000, guid: b62a635287f96b34188a7f69c8fea188, type: 3}
   bgmClip: {fileID: 8300000, guid: 4ff498ff78b31b1438513c7fcd175497, type: 3}
-  successSoundObj: {fileID: 2046009122}
+  successSoundObj: {fileID: 0}
   failedSoundObj: {fileID: 481729274}
   bgm_SoundObj: {fileID: 1774306383}
   clickSoundObj: {fileID: 595899643}
@@ -2152,7 +2152,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1774306385}
-  - {fileID: 2046009124}
   - {fileID: 481729276}
   - {fileID: 595899645}
   m_Father: {fileID: 0}
