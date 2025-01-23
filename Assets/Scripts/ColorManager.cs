@@ -52,23 +52,28 @@ public class ColorManager : MonoBehaviour
         switch(colorType)
         {
             case 1:
-            onClickImage.transform.position = backonetColor.transform.position;
+            if (backonetColor != null)
+                onClickImage.transform.position = backonetColor.transform.position;
             break;
 
             case 2:
-            onClickImage.transform.position = backtwoColor.transform.position;
+            if (backtwoColor != null)
+                onClickImage.transform.position = backtwoColor.transform.position;
             break;
 
             case 3:
-            onClickImage.transform.position = backThreeColor.transform.position;
+            if (backThreeColor != null)
+                onClickImage.transform.position = backThreeColor.transform.position;
             break;
 
             case 4:
-            onClickImage.transform.position = backFourColor.transform.position;
+            if (backFourColor != null)
+                onClickImage.transform.position = backFourColor.transform.position;
             break;
 
             case 5:
-            onClickImage.transform.position = backFiveColor.transform.position;
+            if (backFiveColor != null)
+                onClickImage.transform.position = backFiveColor.transform.position;
             break;
         }
         
@@ -89,19 +94,26 @@ public class ColorManager : MonoBehaviour
 
         if(canvas != null)
         {
+       
+            
             Transform settingPanel = canvas.transform.Find("Setting Panel");
-            Transform cardColorSettingText = settingPanel.Find("Card Color Setting Text");
 
-            backonetColor = cardColorSettingText.transform.Find("Back1")?.gameObject;
-            backtwoColor = cardColorSettingText.transform.Find("Back2")?.gameObject;
-            backThreeColor = cardColorSettingText.transform.Find("Back3")?.gameObject;
-            backFourColor = cardColorSettingText.transform.Find("Back4")?.gameObject;
-            backFiveColor = cardColorSettingText.transform.Find("Back5")?.gameObject;
-            onClickImage = cardColorSettingText.transform.Find("SelectCard")?.gameObject;
-        }
+            if (settingPanel != null)
+            {
+                Transform cardColorSettingText = settingPanel.Find("Card Color Setting Text");
+                
+                if (cardColorSettingText != null)
+                {
+                    backonetColor = cardColorSettingText.transform.Find("Back1")?.gameObject;
+                    backtwoColor = cardColorSettingText.transform.Find("Back2")?.gameObject;
+                    backThreeColor = cardColorSettingText.transform.Find("Back3")?.gameObject;
+                    backFourColor = cardColorSettingText.transform.Find("Back4")?.gameObject;
+                    backFiveColor = cardColorSettingText.transform.Find("Back5")?.gameObject;
+                    onClickImage = cardColorSettingText.transform.Find("SelectCard")?.gameObject;
+                }
 
-        Debug.Log($"backonetColor: {backonetColor}, backtwoColor: {backtwoColor}");
-        
+            }
+        }  
     }
 
     private void OnDestroy()
