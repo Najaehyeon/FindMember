@@ -18,7 +18,7 @@ public class TranslationBtn : MonoBehaviour
         {
             Debug.Log("버튼 클릭");
             AudioManager.instance.SoundPlayClick(0f);
-            TextManager.instance.SettingLanguage(language);
+            StartSceneTextManager.instance.SettingLanguage(language);
             translation.CheckToTextObject(language);
         }
 

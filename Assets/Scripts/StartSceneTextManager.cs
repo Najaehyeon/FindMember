@@ -1,43 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextManager : MonoBehaviour
+public class StartSceneTextManager : MonoBehaviour
 {
-    public static TextManager instance;
-
-    public string nowLanguage;
-
-    public GameObject TranslationObject;
-
     public Text startBtnTxt;
     public Text optionBtnTxt;
-
     public Text topTitleTxt;
     public Text middleTitleTxt;
     public Text bottomTitleTxt;
-
     public Text settingTitleTxt;
     public Text settingAudioTxt;
     public Text settingEffectTxt;
     public Text settingCardColorTxt;
     public Text settingLanguageTxt;
 
-    public Text NJH_Text;
-    public Text YGM_Text;
-    public Text SJW_Text;
-    public Text CBC_Text;
-    public Text LDH_Text;
-    public Text KHA_Text;
-
-    //public Text gameOutBtnTxt;
 
     public Font fontENG;
     public Font fontKOR;
     public Font fontJPN;
+
+    public Translation translation;
+
+    private string nowLanguage;
+
+    public static StartSceneTextManager instance;
 
     private void Awake()
     {
@@ -45,7 +34,7 @@ public class TextManager : MonoBehaviour
         {
             instance = this;
         }
-        else if(instance != null)
+        else if (instance != null)
         {
             Destroy(this.gameObject);
         }
@@ -53,21 +42,41 @@ public class TextManager : MonoBehaviour
 
     private void Start()
     {
-        nowLanguage = PlayerPrefs.GetString("PlayerLanguage", "ENG");       //추후 플레이어가 저장한 언어가 있다면 가져옴. 없으면 "ENG"로 반환
+        SettingText();
+        translation.CheckToTextObject(nowLanguage);
+    }
+
+    public void SettingText()
+    {
+        nowLanguage = PlayerOptionData.instance.nowLanguage;
         SettingLanguage(nowLanguage);
-        TranslationObject.GetComponent<Translation>().CheckToTextObject(nowLanguage);
+    }
+
+    private void SettingFont(Font font)
+    {
+        startBtnTxt.font = font;
+        optionBtnTxt.font = font;
+        //gameOutBtnTxt.font = font;
+        topTitleTxt.font = font;
+        middleTitleTxt.font = font;
+        bottomTitleTxt.font = font;
+        settingTitleTxt.font = font;
+        settingAudioTxt.font = font;
+        settingEffectTxt.font = font;
+        settingCardColorTxt.font = font;
+        settingLanguageTxt.font = font;
     }
 
     public void SettingLanguage(string language)
     {
         nowLanguage = language;
         //nowLanguage의 언어가 셋 중 하나도 해당하지 않을 경우 현재 언어를 ENG로 변경
-        if (nowLanguage != "ENG" &&  nowLanguage != "KOR" && nowLanguage != "JPN")  
+        if (nowLanguage != "ENG" && nowLanguage != "KOR" && nowLanguage != "JPN")
         {
             nowLanguage = "ENG";
         }
-        Debug.Log("현재 언어: " +  nowLanguage);
-        if(nowLanguage == "ENG")
+        Debug.Log("현재 언어: " + nowLanguage);
+        if (nowLanguage == "ENG")
         {
             SettingFont(fontENG);
             startBtnTxt.text = "Start";
@@ -118,21 +127,4 @@ public class TextManager : MonoBehaviour
             Console.WriteLine("언어 확인 오류");
         }
     }
-
-    private void SettingFont(Font font)
-    {
-        startBtnTxt.font = font;
-        optionBtnTxt.font = font;
-        //gameOutBtnTxt.font = font;
-        topTitleTxt.font = font;
-        middleTitleTxt.font = font;
-        bottomTitleTxt.font = font;
-        settingTitleTxt.font = font;
-        settingAudioTxt.font = font;
-        settingEffectTxt.font = font;
-        settingCardColorTxt.font = font;
-        settingLanguageTxt.font = font;
-    }
-
-
 }

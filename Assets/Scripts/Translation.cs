@@ -21,7 +21,8 @@ public class Translation : MonoBehaviour
         if (language == "ENG")
         {
             ENG_textObject.SetActive(true);
-        }else if(language == "KOR")
+        }
+        else if(language == "KOR")
         {
             KOR_textObject.SetActive(true);
         }
