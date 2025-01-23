@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 780089419}
   - component: {fileID: 780089418}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: OptionBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1223,7 +1223,7 @@ GameObject:
   - component: {fileID: 931937567}
   - component: {fileID: 931937571}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: StartBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1813,7 +1813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1174522681
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2534,7 +2534,7 @@ GameObject:
   - component: {fileID: 1601730318}
   - component: {fileID: 1601730317}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: OptionPanelCancletxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3239,7 +3239,7 @@ GameObject:
   - component: {fileID: 1936972436}
   - component: {fileID: 1936972435}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: StartBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3336,6 +3336,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nowLanguage: 
+  optionPanelCancleText: {fileID: 1601730317}
+  startBtnTxt: {fileID: 1936972435}
+  optionBtnTxt: {fileID: 780089418}
+  fontENG: {fileID: 12800000, guid: d7ddd10ba41741846bcaaba122b7361d, type: 3}
+  fontKOR: {fileID: 12800000, guid: 57ae1cb9cdd659b4086c9ab9c8af6bb9, type: 3}
+  fontJPN: {fileID: 12800000, guid: f6524c4bbb432d944b3b9c57a269cb21, type: 3}
 --- !u!4 &1949313982
 Transform:
   m_ObjectHideFlags: 0
