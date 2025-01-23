@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class QuitGame : MonoBehaviour
 {
-    // Update is called once per frame
+    public GameObject settingPanel;
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -13,6 +14,7 @@ public class QuitGame : MonoBehaviour
 
     public void GameQuit()
     {
+        if (settingPanel.activeSelf) return;
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
