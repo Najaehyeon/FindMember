@@ -1887,6 +1887,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfe964bed75f654793ffeb0ba921a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tryCount: {fileID: 2095376301}
+  nowLanguage: 
+  fontENG: {fileID: 12800000, guid: d7ddd10ba41741846bcaaba122b7361d, type: 3}
+  fontKOR: {fileID: 12800000, guid: 57ae1cb9cdd659b4086c9ab9c8af6bb9, type: 3}
+  fontJPN: {fileID: 12800000, guid: f6524c4bbb432d944b3b9c57a269cb21, type: 3}
 --- !u!4 &1243739077
 Transform:
   m_ObjectHideFlags: 0
@@ -2255,6 +2260,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774688984}
   m_CullTransparentMesh: 1
+--- !u!1 &1952627053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1952627055}
+  - component: {fileID: 1952627054}
+  m_Layer: 0
+  m_Name: PlayerOptionData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1952627054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952627053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e704de9622bf5e4ca81062ec4d1b86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nowLanguage: 
+--- !u!4 &1952627055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952627053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 205.33635, y: 679.06537, z: -7.5994925}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2079824473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,6 +2445,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1952627055}
   - {fileID: 2079824475}
   - {fileID: 199872523}
   - {fileID: 519420032}
