@@ -11,11 +11,21 @@ public class TextManager : MonoBehaviour
 
     public string nowLanguage;
 
+    public GameObject TranslationObject;
+
     public Text startBtnTxt;
     public Text optionBtnTxt;
     public Text topTitleTxt;
     public Text middleTitleTxt;
     public Text bottomTitleTxt;
+    public Text settingTitleTxt;
+    public Text settingAudioTxt;
+    public Text settingEffectTxt;
+    public Text settingCardColorTxt;
+    public Text settingLanguageTxt;
+
+
+
     //public Text gameOutBtnTxt;
 
     public Font fontENG;
@@ -38,6 +48,8 @@ public class TextManager : MonoBehaviour
     private void Start()
     {
         nowLanguage = PlayerPrefs.GetString("PlayerLanguage", "ENG");       //추후 플레이어가 저장한 언어가 있다면 가져옴. 없으면 "ENG"로 반환
+        SettingLanguage(nowLanguage);
+        TranslationObject.GetComponent<Translation>().CheckToTextObject(nowLanguage);
     }
 
     public void SettingLanguage(string language)
@@ -58,6 +70,11 @@ public class TextManager : MonoBehaviour
             topTitleTxt.text = "Introduce Our Selves";
             middleTitleTxt.text = "FLIPPING\nCARD GAME";
             bottomTitleTxt.text = "Unity 7th class 12 group";
+            settingTitleTxt.text = "Setting";
+            settingAudioTxt.text = "Background Sound";
+            settingEffectTxt.text = "Effect Sound";
+            settingCardColorTxt.text = "Card Color Change";
+            settingLanguageTxt.text = "Language Setting";
         }
         else if (nowLanguage == "KOR")
         {
@@ -68,6 +85,11 @@ public class TextManager : MonoBehaviour
             topTitleTxt.text = "아이엠 그라운드";
             middleTitleTxt.text = "카드\n뒤집기!";
             bottomTitleTxt.text = "Unity 7기 12조";
+            settingTitleTxt.text = "세팅";
+            settingAudioTxt.text = "배경음";
+            settingEffectTxt.text = "효과음";
+            settingCardColorTxt.text = "카드 색상 설정";
+            settingLanguageTxt.text = "언어 설정";
         }
         else if (nowLanguage == "JPN")
         {
@@ -78,6 +100,11 @@ public class TextManager : MonoBehaviour
             topTitleTxt.text = "たのしい！なかよし！";
             middleTitleTxt.text = "自己紹介\nかるた";
             bottomTitleTxt.text = "Unity 7期生 12組";
+            settingTitleTxt.text = "設定";
+            settingAudioTxt.text = "背景音楽";
+            settingEffectTxt.text = "効果音";
+            settingCardColorTxt.text = "カードの色の変更";
+            settingLanguageTxt.text = "言語設定";
 
         }
         else
@@ -94,6 +121,11 @@ public class TextManager : MonoBehaviour
         topTitleTxt.font = font;
         middleTitleTxt.font = font;
         bottomTitleTxt.font = font;
+        settingTitleTxt.font = font;
+        settingAudioTxt.font = font;
+        settingEffectTxt.font = font;
+        settingCardColorTxt.font = font;
+        settingLanguageTxt.font = font;
     }
 
 

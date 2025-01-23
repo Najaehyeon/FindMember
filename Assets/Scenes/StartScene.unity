@@ -3274,7 +3274,7 @@ GameObject:
   - component: {fileID: 7932984296625236260}
   - component: {fileID: 9080976603769711270}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: ENG_CheckMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3574,7 +3574,7 @@ GameObject:
   - component: {fileID: 759668638049926127}
   - component: {fileID: 8930976370533315618}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: ENG_CheckButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3834,11 +3834,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nowLanguage: 
+  TranslationObject: {fileID: 955471909353896296}
   startBtnTxt: {fileID: 1936972435}
   optionBtnTxt: {fileID: 7269871153380572521}
   topTitleTxt: {fileID: 1497032058114391256}
   middleTitleTxt: {fileID: 7562133485961608535}
   bottomTitleTxt: {fileID: 2181630256482683189}
+  settingTitleTxt: {fileID: 1340195773}
+  settingAudioTxt: {fileID: 1999691606}
+  settingEffectTxt: {fileID: 307868760}
+  settingCardColorTxt: {fileID: 1135937765}
+  settingLanguageTxt: {fileID: 598812884}
   fontENG: {fileID: 12800000, guid: d7ddd10ba41741846bcaaba122b7361d, type: 3}
   fontKOR: {fileID: 12800000, guid: 57ae1cb9cdd659b4086c9ab9c8af6bb9, type: 3}
   fontJPN: {fileID: 12800000, guid: f6524c4bbb432d944b3b9c57a269cb21, type: 3}
@@ -4232,7 +4238,7 @@ GameObject:
   - component: {fileID: 1788624332941452698}
   - component: {fileID: 2517301831777795445}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: JPN_CheckButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4492,7 +4498,7 @@ GameObject:
   - component: {fileID: 2679692005433454635}
   - component: {fileID: 3921890913160688784}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: ENG_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4580,7 +4586,7 @@ GameObject:
   - component: {fileID: 6531052914981387412}
   - component: {fileID: 7285297280881003200}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: JPN_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4617,7 +4623,7 @@ GameObject:
   - component: {fileID: 192334424971709706}
   - component: {fileID: 5707053935725158807}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: KOR_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4643,7 +4649,7 @@ GameObject:
   - component: {fileID: 5517222077696765616}
   - component: {fileID: 1627187635949923720}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: JPN_CheckMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4962,7 +4968,7 @@ GameObject:
   - component: {fileID: 6808166122852675699}
   - component: {fileID: 3272676128144745469}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: KOR_CheckButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5001,7 +5007,7 @@ GameObject:
   - component: {fileID: 8321561606875588823}
   - component: {fileID: 9192672921833253177}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: KOR_CheckMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
