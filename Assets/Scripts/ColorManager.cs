@@ -6,11 +6,15 @@ public class ColorManager : MonoBehaviour
 {
     public static ColorManager instance;
 
-    public GameObject backFirstColor;
+    public GameObject backonetColor;
 
-    public GameObject backSecondColor;
+    public GameObject backtwoColor;
 
-    public GameObject backThirdColor;
+    public GameObject backThreeColor;
+
+    public GameObject backFourColor;
+
+    public GameObject backFiveColor;
 
     public GameObject onClickImage;
 
@@ -29,10 +33,12 @@ public class ColorManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+
     }
     // Start is called before the first frame update
     void Start()
     {
+
         
     }
 
@@ -42,15 +48,23 @@ public class ColorManager : MonoBehaviour
         switch(colorType)
         {
             case 1:
-            onClickImage.transform.position = backFirstColor.transform.position;
+            onClickImage.transform.position = backonetColor.transform.position;
             break;
 
             case 2:
-            onClickImage.transform.position = backSecondColor.transform.position;
+            onClickImage.transform.position = backtwoColor.transform.position;
             break;
 
             case 3:
-            onClickImage.transform.position = backThirdColor.transform.position;
+            onClickImage.transform.position = backThreeColor.transform.position;
+            break;
+
+            case 4:
+            onClickImage.transform.position = backFourColor.transform.position;
+            break;
+
+            case 5:
+            onClickImage.transform.position = backFiveColor.transform.position;
             break;
         }
         

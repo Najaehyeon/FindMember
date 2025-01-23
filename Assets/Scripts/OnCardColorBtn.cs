@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OnCardColorBtn : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,16 +17,26 @@ public class OnCardColorBtn : MonoBehaviour
         
     }
 
-    public void OnClickFirst()
+    public void OnClickOne()
     {
         ColorManager.instance.colorType = 1;
     }
-    public void OnClickSecond()
+    public void OnClickTwo()
     {
         ColorManager.instance.colorType = 2;
     }
 
-    public void OnClickThird()
+    public void OnClickThree()
+    {
+        ColorManager.instance.colorType = 3;
+    }
+
+    public void OnClickFour()
+    {
+        ColorManager.instance.colorType = 3;
+    }
+
+    public void OnClickFive()
     {
         ColorManager.instance.colorType = 3;
     }
