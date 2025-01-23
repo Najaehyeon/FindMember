@@ -28,7 +28,7 @@ public class ColorManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.sceneLoaded += OnSceneLoaded; // 새로운 씬이 로드될 때 자동으로 FindUIObjects를 호출합니다.
         }
         else if(instance != null)
         {
@@ -74,6 +74,7 @@ public class ColorManager : MonoBehaviour
         
     }
 
+    //OnDestroy에서 SceneManager.sceneLoaded 이벤트를 해제하여 불필요한 이벤트 호출을 방지합니다.
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // 씬 로드 후 오브젝트 참조 갱신
