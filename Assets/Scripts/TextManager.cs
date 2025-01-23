@@ -15,16 +15,23 @@ public class TextManager : MonoBehaviour
 
     public Text startBtnTxt;
     public Text optionBtnTxt;
+
     public Text topTitleTxt;
     public Text middleTitleTxt;
     public Text bottomTitleTxt;
+
     public Text settingTitleTxt;
     public Text settingAudioTxt;
     public Text settingEffectTxt;
     public Text settingCardColorTxt;
     public Text settingLanguageTxt;
 
-
+    public Text NJH_Text;
+    public Text YGM_Text;
+    public Text SJW_Text;
+    public Text CBC_Text;
+    public Text LDH_Text;
+    public Text KHA_Text;
 
     //public Text gameOutBtnTxt;
 

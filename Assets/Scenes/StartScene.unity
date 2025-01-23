@@ -293,6 +293,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307868758}
   m_CullTransparentMesh: 1
+--- !u!1 &469690765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 469690767}
+  - component: {fileID: 469690766}
+  m_Layer: 0
+  m_Name: StartSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &469690766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469690765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450ddee95b23328429a01ea834973fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startBtnTxt: {fileID: 1936972435}
+  optionBtnTxt: {fileID: 7269871153380572521}
+  topTitleTxt: {fileID: 1497032058114391256}
+  middleTitleTxt: {fileID: 7562133485961608535}
+  bottomTitleTxt: {fileID: 2181630256482683189}
+  settingTitleTxt: {fileID: 1340195773}
+  settingAudioTxt: {fileID: 1999691606}
+  settingEffectTxt: {fileID: 307868760}
+  settingCardColorTxt: {fileID: 1135937765}
+  settingLanguageTxt: {fileID: 598812884}
+--- !u!4 &469690767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469690765}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 205.33635, y: 679.06537, z: -7.5994925}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534303272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3861,6 +3915,12 @@ MonoBehaviour:
   settingEffectTxt: {fileID: 307868760}
   settingCardColorTxt: {fileID: 1135937765}
   settingLanguageTxt: {fileID: 598812884}
+  NJH_Text: {fileID: 0}
+  YGM_Text: {fileID: 0}
+  SJW_Text: {fileID: 0}
+  CBC_Text: {fileID: 0}
+  LDH_Text: {fileID: 0}
+  KHA_Text: {fileID: 0}
   fontENG: {fileID: 12800000, guid: d7ddd10ba41741846bcaaba122b7361d, type: 3}
   fontKOR: {fileID: 12800000, guid: 57ae1cb9cdd659b4086c9ab9c8af6bb9, type: 3}
   fontJPN: {fileID: 12800000, guid: f6524c4bbb432d944b3b9c57a269cb21, type: 3}
@@ -5161,6 +5221,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 469690767}
   - {fileID: 2006610253}
   - {fileID: 7197531397289143253}
   - {fileID: 1570256244}
