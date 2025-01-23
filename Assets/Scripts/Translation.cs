@@ -14,4 +14,25 @@ public class Translation : MonoBehaviour
         ENG_textObject.SetActive(false);
         JPN_textObject.SetActive(false);
     }
+
+    public void CheckToTextObject(string language)
+    {
+        SettingActiveFalse();
+        if (language == "ENG")
+        {
+            ENG_textObject.SetActive(true);
+        }
+        else if(language == "KOR")
+        {
+            KOR_textObject.SetActive(true);
+        }
+        else if (language == "JPN")
+        {
+            JPN_textObject.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("언어 찾기 실패");
+        }
+    }
 }

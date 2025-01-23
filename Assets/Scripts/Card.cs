@@ -7,7 +7,6 @@ public class Card : MonoBehaviour
 {
     public int index;
     public SpriteRenderer frontimage;
-    public SpriteRenderer backimage;
     public GameObject front;
     public GameObject back;
 
@@ -17,36 +16,8 @@ public class Card : MonoBehaviour
 
     public Animator anim;
 
-    public int colorTypeCard = 1;
-
     private void Start()
     {
-        colorTypeCard = ColorManager.instance.colorType;
-
-        switch(colorTypeCard)
-        {
-            case 1:
-            backimage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
-            break;
-
-            case 2:
-            backimage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
-            break;
-
-            case 3:
-            backimage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
-            break;
-
-            case 4:
-            backimage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
-            break;
-
-            case 5:
-            backimage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
-            break;
-
-        }
-
         flipSound = GetComponent<AudioSource>();
         flipSound.clip = AudioManager.instance.cardFlipClip;
     }
