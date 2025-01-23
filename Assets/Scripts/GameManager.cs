@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     public float timeLimit;
 
     private float remainTime;
+    private bool isCounting; // 시간 업데이트 제어를 위한 플래그
     public float cardFlipDelayTime;
     public float cardCloseDelayTime;
     public float MoveToClearSceneDelayTime;
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         remainTime = timeLimit;
+        isCounting = true; // 카운트 시작
         timeTxt.text = timeLimit.ToString("N2");
     }
 
@@ -52,11 +55,13 @@ public class GameManager : MonoBehaviour
         {
             checkMatched();
             cardCount -= 2;
+
             if (cardCount == 0)
             {
+                tryCount = selectCount / 2;
                 SaveCurrentCount();
-                selectCount = 0;
-                Invoke(nameof(ClearGameMoveScene), MoveToClearSceneDelayTime);
+                isCounting = false; // 시간 카운트 멈춤
+                StartCoroutine(WaitAndClearGame()); // 1초 후 씬 전환
             }
         }
         else
@@ -64,9 +69,10 @@ public class GameManager : MonoBehaviour
             checkMatched();
         }
     }
+
     public void checkMatched()
     {
-        SetActiveFalseButtonObjects();              //모든 버튼 오브젝트 비활성화
+        SetActiveFalseButtonObjects(); // 모든 버튼 오브젝트 비활성화
         if (firstCard.index == secondCard.index)
         {
             firstCard.DestroyCard();
@@ -86,30 +92,36 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        remainTime = float.Parse(timeTxt.text);
-        tryCount = selectCount / 2;
-        tryCountTxt.text = tryCount.ToString();
-
-        if (remainTime > 0)
+        if (isCounting && remainTime > 0) // isCounting이 true일 때만 시간 감소
         {
             remainTime -= Time.deltaTime;
             timeTxt.text = remainTime.ToString("N2");
         }
-        else
+        else if (remainTime <= 0)
         {
             endPanel.SetActive(true);
             Time.timeScale = 0.0f;
             timeTxt.text = "0.00";
             if (PlayerPrefs.GetInt("BestScore") == 0)
             {
-                bestScoreTxt.text = "����� �����ϴ�.";
+                bestScoreTxt.text = "기록이 없습니다.";
             }
             else
             {
                 bestScoreTxt.text = PlayerPrefs.GetInt("BestScore").ToString("N2");
             }
         }
+
+        tryCount = selectCount / 2;
+        tryCountTxt.text = tryCount.ToString();
     }
+
+    private IEnumerator WaitAndClearGame()
+    {
+        yield return new WaitForSeconds(1.0f); // 1초 대기 (Time.timeScale의 영향을 받지 않음)
+        ClearGameMoveScene();
+    }
+
     private void SaveCurrentCount()
     {
         if (PlayerPrefs.GetInt("BestScore") == 0)
@@ -126,7 +138,6 @@ public class GameManager : MonoBehaviour
         }
         PlayerPrefs.SetInt("CurrentScore", tryCount);
     }
-
 
     public void SetActiveTrueButtonObjects()
     {
@@ -160,7 +171,7 @@ public class GameManager : MonoBehaviour
 
         foreach (Transform child in parentObject.transform)
         {
-            if(child.gameObject.CompareTag(tag))
+            if (child.gameObject.CompareTag(tag))
             {
                 result.Add(child.gameObject);
             }
@@ -174,7 +185,5 @@ public class GameManager : MonoBehaviour
     private void ClearGameMoveScene()
     {
         SceneManager.LoadScene("ClearScene");
-        Time.timeScale = 0.0f;
-
     }
 }
