@@ -14,6 +14,9 @@ public class TextManager : MonoBehaviour
     public Text optionPanelCancleText;
     public Text startBtnTxt;
     public Text optionBtnTxt;
+    public Text topTitleTxt;
+    public Text middleTitleTxt;
+    public Text bottomTitleTxt;
     //public Text gameOutBtnTxt;
 
     public Font fontENG;
@@ -41,7 +44,6 @@ public class TextManager : MonoBehaviour
     public void SettingLanguage(string language)
     {
         nowLanguage = language;
-        Debug.Log("실행");
         //nowLanguage의 언어가 셋 중 하나도 해당하지 않을 경우 현재 언어를 ENG로 변경
         if (nowLanguage != "ENG" &&  nowLanguage != "KOR" && nowLanguage != "JPN")  
         {
@@ -50,12 +52,14 @@ public class TextManager : MonoBehaviour
         Debug.Log("현재 언어: " +  nowLanguage);
         if(nowLanguage == "ENG")
         {
-            Debug.Log("영어 감지");
             SettingFont(fontENG);
             optionPanelCancleText.text = "Apply and Exit";
             startBtnTxt.text = "Start";
             //gameOutBtnTxt.text = "Exit";
             optionBtnTxt.text = "Option";
+            topTitleTxt.text = "Introduce Our Selves";
+            middleTitleTxt.text = "FLIPPING\nCARD GAME";
+            bottomTitleTxt.text = "Unity 7th class 12 group";
         }
         else if (nowLanguage == "KOR")
         {
@@ -64,6 +68,9 @@ public class TextManager : MonoBehaviour
             startBtnTxt.text = "시작하기";
             //gameOutBtnTxt.text = "게임종료";
             optionBtnTxt.text = "옵션";
+            topTitleTxt.text = "아이엠 그라운드";
+            middleTitleTxt.text = "카드\n뒤집기!";
+            bottomTitleTxt.text = "Unity 7기 12조";
         }
         else if (nowLanguage == "JPN")
         {
@@ -72,6 +79,9 @@ public class TextManager : MonoBehaviour
             startBtnTxt.text = "スタート";
             //gameOutBtnTxt.text = "終了";
             optionBtnTxt.text = "設定";
+            topTitleTxt.text = "たのしい！なかよし！";
+            middleTitleTxt.text = "自己紹介\nかるた";
+            bottomTitleTxt.text = "Unity 7期生 12組";
 
         }
         else
