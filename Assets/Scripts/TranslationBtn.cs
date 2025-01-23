@@ -20,6 +20,8 @@ public class TranslationBtn : MonoBehaviour
             AudioManager.instance.SoundPlayClick(0f);
             StartSceneTextManager.instance.SettingLanguage(language);
             translation.CheckToTextObject(language);
+
+            PlayerPrefs.SetString("Language", language);
         }
 
     }
