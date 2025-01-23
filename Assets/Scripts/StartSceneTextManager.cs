@@ -48,7 +48,7 @@ public class StartSceneTextManager : MonoBehaviour
 
     public void SettingText()
     {
-        nowLanguage = PlayerOptionData.instance.nowLanguage;
+        nowLanguage = PlayerPrefs.GetString("Language", "ENG");
         SettingLanguage(nowLanguage);
     }
 

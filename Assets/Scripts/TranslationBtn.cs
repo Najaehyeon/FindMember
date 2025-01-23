@@ -22,6 +22,7 @@ public class TranslationBtn : MonoBehaviour
             translation.CheckToTextObject(language);
 
             PlayerPrefs.SetString("Language", language);
+            PlayerOptionData.instance.nowLanguage = language;
         }
 
     }
