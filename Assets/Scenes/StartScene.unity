@@ -1234,11 +1234,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1359114534}
-
   - {fileID: 8737842721882725938}
   - {fileID: 931937566}
   - {fileID: 3390790858708471954}
-
   - {fileID: 914123710}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2032,7 +2030,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994616238}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7743683181190982016, guid: a9acee1f59855f74eb13a3be9e910aed, type: 2}
   m_audioClip: {fileID: 0}
