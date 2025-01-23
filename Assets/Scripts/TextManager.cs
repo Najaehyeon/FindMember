@@ -11,7 +11,6 @@ public class TextManager : MonoBehaviour
 
     public string nowLanguage;
 
-    public Text optionPanelCancleText;
     public Text startBtnTxt;
     public Text optionBtnTxt;
     public Text topTitleTxt;
@@ -53,7 +52,6 @@ public class TextManager : MonoBehaviour
         if(nowLanguage == "ENG")
         {
             SettingFont(fontENG);
-            optionPanelCancleText.text = "Apply and Exit";
             startBtnTxt.text = "Start";
             //gameOutBtnTxt.text = "Exit";
             optionBtnTxt.text = "Option";
@@ -64,7 +62,6 @@ public class TextManager : MonoBehaviour
         else if (nowLanguage == "KOR")
         {
             SettingFont(fontKOR);
-            optionPanelCancleText.text = "적용 및 나가기";
             startBtnTxt.text = "시작하기";
             //gameOutBtnTxt.text = "게임종료";
             optionBtnTxt.text = "옵션";
@@ -75,7 +72,6 @@ public class TextManager : MonoBehaviour
         else if (nowLanguage == "JPN")
         {
             SettingFont(fontJPN);
-            optionPanelCancleText.text = "適用して戻る";
             startBtnTxt.text = "スタート";
             //gameOutBtnTxt.text = "終了";
             optionBtnTxt.text = "設定";
@@ -92,10 +88,12 @@ public class TextManager : MonoBehaviour
 
     private void SettingFont(Font font)
     {
-        optionPanelCancleText.font = font;
         startBtnTxt.font = font;
         optionBtnTxt.font = font;
         //gameOutBtnTxt.font = font;
+        topTitleTxt.font = font;
+        middleTitleTxt.font = font;
+        bottomTitleTxt.font = font;
     }
 
 
