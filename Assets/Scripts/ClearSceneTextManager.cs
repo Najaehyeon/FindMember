@@ -45,13 +45,7 @@ public class ClearSceneTextManager : MonoBehaviour
 
     private void Start()
     {
-        SettingText();
-    }
-
-    public void SettingText()
-    {
-        nowLanguage = PlayerPrefs.GetString("Language", "ENG");
-        SettingLanguage(nowLanguage);
+        SettingLanguage(PlayerOptionData.instance.nowLanguage);
     }
 
     private void SettingFont(Font font)

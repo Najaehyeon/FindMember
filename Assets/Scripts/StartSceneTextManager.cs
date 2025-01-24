@@ -42,14 +42,7 @@ public class StartSceneTextManager : MonoBehaviour
 
     private void Start()
     {
-        SettingText();
-        translation.CheckToTextObject(nowLanguage);
-    }
-
-    public void SettingText()
-    {
-        nowLanguage = PlayerPrefs.GetString("Language", "ENG");
-        SettingLanguage(nowLanguage);
+        SettingLanguage(PlayerOptionData.instance.nowLanguage);
     }
 
     private void SettingFont(Font font)

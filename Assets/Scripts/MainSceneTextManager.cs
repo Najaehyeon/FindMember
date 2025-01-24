@@ -30,15 +30,8 @@ public class MainSceneTextManager : MonoBehaviour
 
     private void Start()
     {
-        SettingText();
+        SettingLanguage(PlayerOptionData.instance.nowLanguage);
     }
-
-    public void SettingText()
-    {
-        nowLanguage = PlayerPrefs.GetString("Language", "ENG");
-        SettingLanguage(nowLanguage);
-    }
-
     private void SettingFont(Font font)
     {
         tryCount.font = font;

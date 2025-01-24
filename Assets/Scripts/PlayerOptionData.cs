@@ -13,18 +13,24 @@ public class PlayerOptionData : MonoBehaviour
         if(instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else if(instance != null)
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        
+        LoadPlayerOptionData();
     }
 
 
-    private void Start()
+    public void LoadPlayerOptionData()
     {
         nowLanguage = PlayerPrefs.GetString("Language", "ENG");
-        Debug.Log("language = " +  nowLanguage);
+    }
+
+    public void SavePlayerOptionData()
+    {
+        PlayerPrefs.SetString("Language", nowLanguage);
     }
 }

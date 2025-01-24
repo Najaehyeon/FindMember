@@ -21,8 +21,9 @@ public class TranslationBtn : MonoBehaviour
             StartSceneTextManager.instance.SettingLanguage(language);
             translation.CheckToTextObject(language);
 
-            PlayerPrefs.SetString("Language", language);
             PlayerOptionData.instance.nowLanguage = language;
+            PlayerOptionData.instance.SavePlayerOptionData();
+            PlayerOptionData.instance.LoadPlayerOptionData();
         }
 
     }
