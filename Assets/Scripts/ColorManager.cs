@@ -34,9 +34,7 @@ public class ColorManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-
-        
+        colorType = PlayerPrefs.GetInt("colorType", 1);
     }
     // Start is called before the first frame update
     void Start()
