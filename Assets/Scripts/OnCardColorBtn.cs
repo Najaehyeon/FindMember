@@ -5,39 +5,32 @@ using UnityEngine;
 public class OnCardColorBtn : MonoBehaviour
 {
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnClickOne()
     {
+        AudioManager.instance.SoundPlayClick(0f);
         ColorManager.instance.colorType = 1;
     }
     public void OnClickTwo()
     {
+        AudioManager.instance.SoundPlayClick(0f);
         ColorManager.instance.colorType = 2;
     }
 
     public void OnClickThree()
     {
+        AudioManager.instance.SoundPlayClick(0f);
         ColorManager.instance.colorType = 3;
     }
 
     public void OnClickFour()
     {
+        AudioManager.instance.SoundPlayClick(0f);
         ColorManager.instance.colorType = 4;
     }
 
     public void OnClickFive()
     {
+        AudioManager.instance.SoundPlayClick(0f);
         ColorManager.instance.colorType = 5;
     }
 

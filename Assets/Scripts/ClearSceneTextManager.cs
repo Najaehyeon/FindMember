@@ -79,13 +79,13 @@ public class ClearSceneTextManager : MonoBehaviour
             NJH_Text.text = "I want to create a game for 100 billion people.";
             YGM_Text.text = "I want to create a game that will last a long time in peoples memory";
             SJW_Text.text = "I want to create a game that will be nominated for GOTY";
-            CBC_Text.text = "want to create a game that brings happiness to the players";
+            CBC_Text.text = "I want to create a game that brings happiness to the players";
             LDH_Text.text = "I want to create a game that we can enjoy now, remebering the memories";
             KHA_Text.text = "I want to create a game that we forget the harsh reality";
 
             gameOverTxt.text = "Game Over";
-            bestRecordTxt.text = "High Score";
-            currentRecordTxt.text = "Current Score";
+            bestRecordTxt.text = "Best";
+            currentRecordTxt.text = "Current";
             retryTxt.text = "Play Again.";
 
             pressAnyKeyTxt.text = "Please click the screen";
