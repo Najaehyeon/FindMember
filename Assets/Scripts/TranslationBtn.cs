@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class TranslationBtn : MonoBehaviour
@@ -16,15 +17,14 @@ public class TranslationBtn : MonoBehaviour
         translation = translationObject.GetComponent<Translation>();
         if (textObject.activeSelf == false)
         {
-            Debug.Log("버튼 클릭");
             AudioManager.instance.SoundPlayClick(0f);
             StartSceneTextManager.instance.SettingLanguage(language);
+
             translation.CheckToTextObject(language);
 
             PlayerOptionData.instance.nowLanguage = language;
             PlayerOptionData.instance.SavePlayerOptionData();
             PlayerOptionData.instance.LoadPlayerOptionData();
         }
-
     }
 }

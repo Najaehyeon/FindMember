@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Icons;
 
 public class StartSceneTextManager : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class StartSceneTextManager : MonoBehaviour
     private void Start()
     {
         SettingLanguage(PlayerOptionData.instance.nowLanguage);
+        translation.CheckToTextObject(PlayerOptionData.instance.nowLanguage);
     }
 
     private void SettingFont(Font font)
