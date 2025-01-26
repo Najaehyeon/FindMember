@@ -36,6 +36,7 @@ public class OnCardColorBtn : MonoBehaviour
     {
         AudioManager.instance.SoundPlayClick(0f);
         ColorManager.instance.colorType = 5;
+        PlayerPrefs.SetInt("colorType", 5);
     }
 
 }
