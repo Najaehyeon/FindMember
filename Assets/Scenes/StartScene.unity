@@ -1016,12 +1016,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 722946249}
         m_TargetAssemblyTypeName: OnCardColorBtn, Assembly-CSharp
-        m_MethodName: OnClickThree
-        m_Mode: 1
+        m_MethodName: OnClickColor
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1435,12 +1435,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 880457073}
         m_TargetAssemblyTypeName: OnCardColorBtn, Assembly-CSharp
-        m_MethodName: OnClickTwo
-        m_Mode: 1
+        m_MethodName: OnClickColor
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2508,12 +2508,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1232027700}
         m_TargetAssemblyTypeName: OnCardColorBtn, Assembly-CSharp
-        m_MethodName: OnClickFour
-        m_Mode: 1
+        m_MethodName: OnClickColor
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2653,12 +2653,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1233211011}
         m_TargetAssemblyTypeName: OnCardColorBtn, Assembly-CSharp
-        m_MethodName: OnClickFive
-        m_Mode: 1
+        m_MethodName: OnClickColor
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4125,12 +4125,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2028547841}
         m_TargetAssemblyTypeName: OnCardColorBtn, Assembly-CSharp
-        m_MethodName: OnClickOne
-        m_Mode: 1
+        m_MethodName: OnClickColor
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

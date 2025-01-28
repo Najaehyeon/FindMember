@@ -22,32 +22,8 @@ public class Card : MonoBehaviour
     {
         colorTypeCard = ColorManager.instance.colorType;
 
-        switch (colorTypeCard)
-        {
-            case 1:
-                backImage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
-            break;
-
-            case 2:
-                backImage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
-            break;
-
-            case 3:
-                backImage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
-            break;
-
-            case 4:
-                backImage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
-            break;
-
-            case 5:
-                backImage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
-            break;
-            
-        }
-
-
-
+        backImage.sprite = Resources.Load<Sprite>($"Back{colorTypeCard}");
+           
         flipSound = GetComponent<AudioSource>();
         flipSound.clip = AudioManager.instance.cardFlipClip;
     }
